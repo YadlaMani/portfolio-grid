@@ -10,7 +10,7 @@ import Personal from "@/components/Personal";
 
 export default function Home() {
   return (
-    <div className="grid grid-cols-12 grid-rows-6 gap-4 h-screen p-4 bg-background">
+    <div className="grid grid-cols-12 grid-rows-6 gap-4 h-screen p-4 ">
       <CodingProfile />
       <Web2Projects />
       <SocialLinks />

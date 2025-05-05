@@ -48,7 +48,7 @@ export default function CodingProfile() {
   }, []);
 
   return (
-    <Card className="col-span-2 row-span-2  overflow-hidden rounded-lg shadow-lg">
+    <Card className="col-span-2 row-span-2  overflow-hidden rounded-lg shadow-lg bg-red-400">
       <CardContent>
         <div className="flex flex-col gap-4 ">
           <div className="flex items-center gap-2 justify-around">
@@ -66,7 +66,9 @@ export default function CodingProfile() {
 
             <NotionCard>
               <div className="h-10 w-20 px-3 flex items-center justify-center">
-                <h2 className="text-md font-bold">{ratings.leetcode}</h2>
+                <h2 className="text-md font-bold">
+                  {ratings.leetcode ? ratings.leetcode : "..."}
+                </h2>
               </div>
             </NotionCard>
           </div>
@@ -74,7 +76,9 @@ export default function CodingProfile() {
           <div className="flex items-center gap-4 justify-around">
             <NotionCard>
               <div className="h-10 px-3 w-20  flex justify-center items-center">
-                <h2 className="text-md  font-bold">{ratings.codechef}</h2>
+                <h2 className="text-md  font-bold">
+                  {ratings.codechef ? ratings.codechef : "..."}
+                </h2>
               </div>
             </NotionCard>
             <PushButton>
@@ -104,7 +108,9 @@ export default function CodingProfile() {
             </PushButton>
             <NotionCard>
               <div className="h-10  justify-center w-20 px-3 flex items-center">
-                <h2 className="text-md font-bold">{ratings.codeforces}</h2>
+                <h2 className="text-md font-bold">
+                  {ratings.codeforces ? ratings.codeforces : "..."}
+                </h2>
               </div>
             </NotionCard>
           </div>
