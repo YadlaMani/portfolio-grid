@@ -5,6 +5,7 @@ import Web3Projects from "@/components/Web3Projects";
 import Achievements from "@/components/Achievements";
 import ProfileCard from "@/components/ProfileCard";
 import TechStack from "@/components/TechStack";
+
 import Personal from "@/components/Personal";
 
 export default function Home() {
