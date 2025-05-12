@@ -1,7 +1,7 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
-export default function DailyTodos() {
+export default function Stats() {
   return (
     <Card className="col-span-3 row-span-2">
       <CardContent className="space-y-2">
