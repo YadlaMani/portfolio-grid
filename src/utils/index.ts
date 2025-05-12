@@ -1,18 +1,17 @@
 export const socialLinks = [
-  { name: "GitHub", src: "/github.png", link: "https://github.com/YadlaMani" },
-  { name: "Twitter", src: "/x3.png", link: "https://x.com/mani_yadla_" },
-  { name: "Gmail", src: "/gmail.png", link: "mailto:yadlamaniymn@gmail.com" },
+  { name: "GitHub", link: "https://github.com/YadlaMani" },
+  { name: "X", link: "https://x.com/mani_yadla_" },
+  { name: "Gmail", link: "mailto:yadlamaniymn@gmail.com" },
   {
     name: "Discord",
-    src: "/discord.png",
     link: "https://discord.com/users/blank__003",
   },
   {
     name: "LinkedIn",
-    src: "/linkedin.png",
     link: "https://www.linkedin.com/in/yadla-mani/",
   },
 ];
+
 export const projects = [
   {
     title: "Bob",

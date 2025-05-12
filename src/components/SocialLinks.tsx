@@ -1,4 +1,11 @@
-import Image from "next/image";
+import {
+  FaGithub,
+  FaLinkedin,
+  FaDiscord,
+  FaGoogle,
+  FaEnvelope,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { Card } from "@/components/ui/card";
 import {
   Tooltip,
@@ -16,19 +23,17 @@ export default function SocialLinks() {
         {socialLinks.map((item) => (
           <Tooltip key={item.name}>
             <TooltipTrigger asChild>
-              <div className="flex items-center justify-center w-full h-full cursor-pointer rounded border border-gray-300 shadow-[4px_4px_0_0_rgba(0,0,0,0.8)] transition hover:shadow-[2px_2px_0_0_rgba(0,0,0,0.5)]">
+              <div className="flex items-center justify-center w-full h-full cursor-pointer rounded border border-gray-300 dark:border-white shadow-[4px_4px_0_0_rgba(0,0,0,0.8)] dark:shadow-[4px_4px_0_0_rgba(255,255,255,0.8)] transition hover:shadow-[2px_2px_0_0_rgba(0,0,0,0.5)]">
                 <Link
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <Image
-                    src={item.src}
-                    alt={item.name}
-                    width={48}
-                    height={48}
-                    className="rounded p-1 "
-                  />
+                  {item.name === "GitHub" && <FaGithub size={24} />}
+                  {item.name === "X" && <FaXTwitter size={24} />}
+                  {item.name === "Gmail" && <FaEnvelope size={24} />}
+                  {item.name === "Discord" && <FaDiscord size={24} />}
+                  {item.name === "LinkedIn" && <FaLinkedin size={24} />}
                 </Link>
               </div>
             </TooltipTrigger>

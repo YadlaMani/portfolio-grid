@@ -2,7 +2,7 @@ import CodingProfile from "@/components/CodingProfile";
 import Web2Projects from "@/components/Web2Projects";
 import SocialLinks from "@/components/SocialLinks";
 import Web3Projects from "@/components/Web3Projects";
-import Achievements from "@/components/Achievements";
+import DailyTodos from "@/components/DailyTodos";
 import ProfileCard from "@/components/ProfileCard";
 import TechStack from "@/components/TechStack";
 
@@ -15,7 +15,7 @@ export default function Home() {
       <Web2Projects />
       <SocialLinks />
       <Web3Projects />
-      <Achievements />
+      <DailyTodos />
       <ProfileCard />
       <TechStack />
       <Personal />
