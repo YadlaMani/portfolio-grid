@@ -10,8 +10,13 @@ export default function Web2Projects() {
       <CardContent className="flex flex-col gap-4">
         <div className="grid grid-cols-4 gap-4 h-45">
           {projects.map((project, idx) => (
-            <Link href={project.live} target="_blank" rel="noopener noreferrer">
-              <div className="flex flex-col h-full border-b-2" key={idx}>
+            <Link
+              key={idx}
+              href={project.live}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <div className="flex flex-col h-full border-b-2">
                 <div className="p-2 h-[40%] flex flex-col justify-between">
                   <div className="flex items-center justify-between">
                     <h1 className="text-sm font-bold">{project.title}</h1>
