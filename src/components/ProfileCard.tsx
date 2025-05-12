@@ -1,30 +1,51 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+"use client";
+
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
+import { useTheme } from "next-themes";
+import { Button } from "./ui/button";
 
 export default function ProfileCard() {
+  const { theme, setTheme } = useTheme();
+
+  const handleToggle = () => {
+    setTheme(theme === "dark" ? "light" : "dark");
+  };
+
   return (
-    <Card className="col-span-6 row-span-2">
-      <CardContent className="p-0 h-full">
-        <div className="flex h-full">
-          <div className="w-1/3 relative">
+    <Card className="col-span-6 row-span-2 rounded-xl border border-muted shadow-sm">
+      <CardHeader>
+        <div className="flex items-center gap-4">
+          <Image
+            src="https://pbs.twimg.com/profile_images/1905303184111009793/MqSsO-dO_400x400.jpg"
+            alt="Profile"
+            width={48}
+            height={48}
+            className="rounded-full object-cover"
+          />
+          <div className="flex-1">
+            <h2 className="font-semibold text-lg leading-tight">Mani.</h2>
+            <p className="text-sm text-muted-foreground">@mani_yadla_</p>
+          </div>
+
+          <Button
+            onClick={handleToggle}
+            className="p-1 rounded bg-white dark:bg-white hover:scale-105 transition-transform cursor-pointer"
+          >
             <Image
-              src="/placeholder.svg?height=400&width=300"
-              alt="Profile"
-              width={300}
-              height={400}
-              className="object-cover h-full"
+              src="/toogle.webp"
+              alt="Toggle Theme"
+              width={32}
+              height={32}
+              className="rounded"
             />
-          </div>
-          <div className="w-2/3 p-6 flex flex-col justify-center">
-            <h2 className="text-2xl font-bold mb-2">John Doe</h2>
-            <p className="text-muted-foreground mb-4">Full Stack Developer</p>
-            <div className="flex gap-2">
-              <Badge>Available</Badge>
-              <Badge variant="outline">Remote</Badge>
-            </div>
-          </div>
+          </Button>
         </div>
+      </CardHeader>
+      <CardContent>
+        <h1>
+          Building cool things on Web2, Web3, and beyond. Member @SuperteamIN
+        </h1>
       </CardContent>
     </Card>
   );
