@@ -42,3 +42,15 @@ export const projects = [
     live: "https://test-ai-two.vercel.app/",
   },
 ];
+export const experience = [
+  {
+    title: "SWE Intern",
+    company: "Google",
+    date: "June 2025-Present",
+  },
+  {
+    title: "Founding Intern",
+    company: "Rivekit",
+    date: "Aug 2024 - Oct 2024",
+  },
+];

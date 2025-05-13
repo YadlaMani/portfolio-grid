@@ -47,7 +47,15 @@ export default function ProfileCard() {
       <div className="flex flex-col m-4 ">
         <div>
           <h1>
-            Building cool things on Web2, Web3, and beyond. Member @SuperteamIN
+            Building cool things on Web2, Web3, and beyond. Member{" "}
+            <a
+              href="https://x.com/SuperteamIN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400"
+            >
+              @SuperteamIN
+            </a>
           </h1>
         </div>
         <div className="flex flex-row gap-4 items-center justify-between ">

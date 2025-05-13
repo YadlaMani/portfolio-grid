@@ -1,7 +1,7 @@
 import CodingProfile from "@/components/CodingProfile";
 import Web2Projects from "@/components/Web2Projects";
 import SocialLinks from "@/components/SocialLinks";
-import Web3Projects from "@/components/Web3Projects";
+import Experience from "@/components/Experience";
 import Stats from "@/components/Stats";
 import ProfileCard from "@/components/ProfileCard";
 import TechStack from "@/components/TechStack";
@@ -14,7 +14,7 @@ export default function Home() {
       <CodingProfile />
       <Web2Projects />
       <SocialLinks />
-      <Web3Projects />
+      <Experience />
       <Stats />
       <ProfileCard />
       <TechStack />
