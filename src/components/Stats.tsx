@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export default function Stats() {
   return (
-    <Card className="col-span-3 row-span-2">
+    <Card className="md:col-span-3 md:row-span-2">
       <CardContent className="space-y-2">
         <div className="mt-4">
           <img
