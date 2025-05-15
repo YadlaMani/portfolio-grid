@@ -3,7 +3,7 @@ import { experience } from "@/utils";
 
 export default function Experience() {
   return (
-    <Card className="col-span-3 row-span-3 flex flex-col gap-4 p-4 overflow-y-auto max-h-full">
+    <Card className="col-span-3 row-span-3 flex flex-col gap-4 p-4 md:overflow-y-auto max-h-full">
       {[
         ...experience,
         {
