@@ -13,8 +13,9 @@ import {
 import Link from "next/link";
 
 type LearningItem = {
-  title: string;
-  done: boolean;
+  _id: string;
+  text: string;
+  learned: boolean;
 };
 
 export default function Personal() {
@@ -23,9 +24,7 @@ export default function Personal() {
 
   useEffect(() => {
     axios
-      .get(
-        "https://raw.githubusercontent.com/YadlaMani/what-am-i-learning/main/learning.json"
-      )
+      .get("https://wil-amber.vercel.app/api/items")
       .then((response) => {
         setLearningData(response.data);
         setLoading(false);
@@ -43,9 +42,9 @@ export default function Personal() {
         <p className="text-muted-foreground">Loading...</p>
       ) : (
         <div className="grid gap-4">
-          {learningData.map((item, index) => (
+          {learningData.map((item) => (
             <div
-              key={index}
+              key={item._id}
               className="flex items-center justify-between border-b py-2"
             >
               <TooltipProvider>
@@ -54,32 +53,27 @@ export default function Personal() {
                     <div className="flex items-center space-x-2">
                       <FaYoutube size={20} />
                       <Link
-                        href={item.title}
+                        href={item.text}
                         target="_blank"
                         rel="noopener noreferrer"
                       >
                         <span className="text-blue-400 hover:underline">
-                          {item.title}
+                          {item.text}
                         </span>
                       </Link>
                     </div>
                   </TooltipTrigger>
                   <TooltipContent side="top" className="text-xs font-medium">
-                    YouTube Video
+                    Learning Resource
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
               <input
-                title="Mark as done"
+                title="Marked as done"
                 type="checkbox"
-                checked={item.done}
-                onChange={() => {
-                  const updatedData = [...learningData];
-                  updatedData[index].done = !updatedData[index].done;
-                  setLearningData(updatedData);
-                }}
+                checked={item.learned}
+                readOnly
                 className="h-5 w-5"
-                disabled
               />
             </div>
           ))}
