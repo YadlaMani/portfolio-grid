@@ -48,7 +48,7 @@ export default function CodingProfile() {
   }, []);
 
   return (
-    <Card className="col-span-2 row-span-2  overflow-hidden rounded-lg shadow-lg bg-red-400">
+    <Card className="md:col-span-2 md:row-span-2  md:overflow-hidden rounded-lg shadow-lg bg-red-400">
       <CardContent>
         <div className="flex flex-col gap-4 ">
           <div className="flex items-center gap-2 justify-around">

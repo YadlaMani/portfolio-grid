@@ -6,9 +6,9 @@ import Link from "next/link";
 import { projects } from "@/utils";
 export default function Web2Projects() {
   return (
-    <Card className="col-span-7 row-span-2 ">
+    <Card className="md:col-span-7 md:row-span-2 ">
       <CardContent className="flex flex-col gap-4">
-        <div className="grid grid-cols-4 gap-4 h-45">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:h-45">
           {projects.map((project, idx) => (
             <Link
               key={idx}

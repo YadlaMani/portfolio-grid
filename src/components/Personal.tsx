@@ -36,7 +36,7 @@ export default function Personal() {
   }, []);
 
   return (
-    <Card className="col-span-3 row-span-2 p-4 overflow-y-auto max-h-full">
+    <Card className="md:col-span-3 md:row-span-2 p-4 md:overflow-y-auto max-h-full">
       <h2 className="text-xl font-bold mb-4">📚 What Am I Learning</h2>
       {loading ? (
         <p className="text-muted-foreground">Loading...</p>

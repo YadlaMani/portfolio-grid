@@ -15,7 +15,7 @@ export default function ProfileCard() {
   };
 
   return (
-    <Card className="col-span-6 row-span-2 rounded-xl border border-muted shadow-sm relative">
+    <Card className="md:col-span-6 md:row-span-2 rounded-xl border border-muted shadow-sm relative">
       <CardHeader>
         <div className="flex items-center gap-4">
           <Image
@@ -58,7 +58,7 @@ export default function ProfileCard() {
             </a>
           </h1>
         </div>
-        <div className="flex flex-row gap-4 items-center justify-between ">
+        <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between ">
           <a
             href="https://drive.google.com/uc?export=download&id=144EzQbqbvN4BP809unVv3EKN4qRvz0Dx"
             target="_blank"

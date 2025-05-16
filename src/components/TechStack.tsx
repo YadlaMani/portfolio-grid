@@ -44,7 +44,7 @@ const techGroups = [
 
 export default function TechStack() {
   return (
-    <Card className="col-span-9 row-span-2 h-full">
+    <Card className="md:col-span-9 md:row-span-2 h-full">
       <CardHeader>
         <CardTitle className="text-2xl font-bold">Tech Stack</CardTitle>
       </CardHeader>
