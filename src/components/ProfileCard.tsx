@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
 import { Spotify } from "react-spotify-embed";
-import { FaFileDownload } from "react-icons/fa";
+import { FaFileDownload, FaMagic } from "react-icons/fa";
 
 export default function ProfileCard() {
   const { theme, setTheme } = useTheme();
@@ -59,16 +59,29 @@ export default function ProfileCard() {
           </h1>
         </div>
         <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between ">
-          <a
-            href="https://drive.google.com/uc?export=download&id=144EzQbqbvN4BP809unVv3EKN4qRvz0Dx"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Button className="flex items-center gap-2">
-              <FaFileDownload className="w-4 h-4" />
-              Resume
-            </Button>
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://drive.google.com/uc?export=download&id=144EzQbqbvN4BP809unVv3EKN4qRvz0Dx"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="flex items-center gap-2">
+                <FaFileDownload className="w-4 h-4" />
+                Resume
+              </Button>
+            </a>
+            <a
+              href="https://profuse-name-f33.notion.site/Mani-Yadla-proof-of-work-1a127f6bc69a8024b804e85ddbe1cf10"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button className="flex items-center gap-2">
+                <FaMagic className="w-4 h-4" />
+                {`I'm Feeling Lucky`}
+              </Button>
+            </a>
+          </div>
+
           <div className="backdrop:blur-sm ">
             <Spotify
               wide
