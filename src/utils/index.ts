@@ -1,11 +1,12 @@
 export const socialLinks = [
   { name: "GitHub", link: "https://github.com/YadlaMani" },
   { name: "X", link: "https://x.com/mani_yadla_" },
-  { name: "Gmail", link: "mailto:yadlamaniymn@gmail.com" },
   {
-    name: "Discord",
-    link: "https://discord.com/users/blank__003",
+    name: "Hi",
+    link: "https://medium.com/@yadlamaniymn2005/my-google-interview-experience-884adf45a702",
   },
+  { name: "Gmail", link: "mailto:yadlamaniymn@gmail.com" },
+
   {
     name: "LinkedIn",
     link: "https://www.linkedin.com/in/yadla-mani/",

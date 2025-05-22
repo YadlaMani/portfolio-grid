@@ -1,6 +1,7 @@
 import { FaGithub, FaLinkedin, FaDiscord, FaEnvelope } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 import { Card } from "@/components/ui/card";
+import Image from "next/image";
 import {
   Tooltip,
   TooltipContent,
@@ -26,7 +27,15 @@ export default function SocialLinks() {
                   {item.name === "GitHub" && <FaGithub size={24} />}
                   {item.name === "X" && <FaXTwitter size={24} />}
                   {item.name === "Gmail" && <FaEnvelope size={24} />}
-                  {item.name === "Discord" && <FaDiscord size={24} />}
+                  {item.name === "Hi" && (
+                    <Image
+                      className="rounded-2xl"
+                      src="/hi.jpeg"
+                      alt="hi"
+                      height={48}
+                      width={48}
+                    />
+                  )}
                   {item.name === "LinkedIn" && <FaLinkedin size={24} />}
                 </Link>
               </div>
