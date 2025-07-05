@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { Card, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 import Image from "next/image";
 import PushButton from "./os/pushbutton";
@@ -20,26 +21,29 @@ export default function CodingProfile() {
         "https://codeforces.com/api/user.info?handles=mani_7_"
       );
       const codeforcesRating = cfRes.data.result[0].rating;
+      setRatings((prev) => ({ ...prev, codeforces: codeforcesRating }));
+    } catch (error) {
+      console.error("Failed to fetch Codeforces rating", error);
+    }
 
+    try {
       const lcRes = await axios.get(
         "https://leetcode-rating-api.glitch.me/yadla_mani"
       );
-      console.log(lcRes.data);
       const leetcodeRating = lcRes.data[lcRes.data.length - 1].rating;
-      console.log(leetcodeRating);
+      setRatings((prev) => ({ ...prev, leetcode: leetcodeRating }));
+    } catch (error) {
+      console.error("Failed to fetch Leetcode rating", error);
+    }
 
+    try {
       const ccRes = await axios.get(
         "https://codechef-api.vercel.app/handle/mani_yadla"
       );
       const codechefRating = ccRes.data.currentRating;
-
-      setRatings({
-        codeforces: codeforcesRating,
-        leetcode: leetcodeRating,
-        codechef: codechefRating,
-      });
+      setRatings((prev) => ({ ...prev, codechef: codechefRating }));
     } catch (error) {
-      console.error("Failed to fetch ratings", error);
+      console.error("Failed to fetch Codechef rating", error);
     }
   };
 
@@ -52,17 +56,23 @@ export default function CodingProfile() {
       <CardContent>
         <div className="flex flex-col gap-4 ">
           <div className="flex items-center gap-2 justify-around">
-            <PushButton>
-              <div className="rounded p-1 h-10 w-10 flex items-center justify-center">
-                <Image
-                  width={24}
-                  height={24}
-                  alt="leetcode-logo"
-                  src="/leetcode-color.png"
-                  className="rounded"
-                />
-              </div>
-            </PushButton>
+            <Link
+              href="https://leetcode.com/yadla_mani/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PushButton>
+                <div className="rounded p-1 h-10 w-10 flex items-center justify-center">
+                  <Image
+                    width={24}
+                    height={24}
+                    alt="leetcode-logo"
+                    src="/leetcode-color.png"
+                    className="rounded"
+                  />
+                </div>
+              </PushButton>
+            </Link>
 
             <NotionCard>
               <div className="h-10 w-20 px-3 flex items-center justify-center">
@@ -81,31 +91,43 @@ export default function CodingProfile() {
                 </h2>
               </div>
             </NotionCard>
-            <PushButton>
-              <div className="rounded p-1">
-                <Image
-                  width={32}
-                  height={32}
-                  alt="codechef-logo"
-                  src="/code-chef.svg"
-                  className="rounded"
-                />
-              </div>
-            </PushButton>
+            <Link
+              href="https://www.codechef.com/users/mani_yadla"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PushButton>
+                <div className="rounded p-1">
+                  <Image
+                    width={32}
+                    height={32}
+                    alt="codechef-logo"
+                    src="/code-chef.svg"
+                    className="rounded"
+                  />
+                </div>
+              </PushButton>
+            </Link>
           </div>
 
           <div className="flex items-center gap-4  justify-around">
-            <PushButton>
-              <div className="rounded p-1">
-                <Image
-                  width={32}
-                  height={32}
-                  alt="codeforces-logo"
-                  src="/codeforces.png"
-                  className="rounded"
-                />
-              </div>
-            </PushButton>
+            <Link
+              href="https://codeforces.com/profile/mani_7_"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <PushButton>
+                <div className="rounded p-1">
+                  <Image
+                    width={32}
+                    height={32}
+                    alt="codeforces-logo"
+                    src="/codeforces.png"
+                    className="rounded"
+                  />
+                </div>
+              </PushButton>
+            </Link>
             <NotionCard>
               <div className="h-10  justify-center w-20 px-3 flex items-center">
                 <h2 className="text-md font-bold">
