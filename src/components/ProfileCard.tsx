@@ -14,6 +14,7 @@ import {
   DialogTitle,
   DialogDescription,
 } from "@/components/ui/dialog";
+import { Achievements } from "@/utils";
 
 export default function ProfileCard() {
   const { theme, setTheme } = useTheme();
@@ -48,12 +49,9 @@ export default function ProfileCard() {
                 <DialogTitle>Achievements 🏆</DialogTitle>
                 <DialogDescription className="space-y-2 pt-2">
                   <ul className="list-disc list-inside text-sm text-muted-foreground">
-                    <li>1st Place Base Hackathon by Coinbase (2025)</li>
-                    <li>Winner Solana Mini Hackathon</li>
-                    <li>Winner Devfest 2025</li>
-                    <li>Winner HackSquad 2024</li>
-                    <li>Winner 5 National-Level Hackathons</li>
-                    <li>Grant from Solana Foundation X CoinDCX</li>
+                    {Achievements.map((achievement, id) => (
+                      <li key={id}>{achievement}</li>
+                    ))}
                   </ul>
                 </DialogDescription>
               </DialogModalHeader>
