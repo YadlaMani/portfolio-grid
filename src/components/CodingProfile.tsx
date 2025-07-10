@@ -77,7 +77,7 @@ export default function CodingProfile() {
             <NotionCard>
               <div className="h-10 w-20 px-3 flex items-center justify-center">
                 <h2 className="text-md font-bold">
-                  {ratings.leetcode ? ratings.leetcode : "..."}
+                  {ratings.leetcode ? ratings.leetcode : "1945"}
                 </h2>
               </div>
             </NotionCard>

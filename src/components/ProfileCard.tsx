@@ -5,7 +5,15 @@ import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
 import { Spotify } from "react-spotify-embed";
-import { FaFileDownload, FaMagic } from "react-icons/fa";
+import { FaFileDownload, FaMagic, FaTrophy } from "react-icons/fa";
+import {
+  Dialog,
+  DialogTrigger,
+  DialogContent,
+  DialogHeader as DialogModalHeader,
+  DialogTitle,
+  DialogDescription,
+} from "@/components/ui/dialog";
 
 export default function ProfileCard() {
   const { theme, setTheme } = useTheme();
@@ -30,6 +38,28 @@ export default function ProfileCard() {
             <p className="text-sm text-muted-foreground">@mani_yadla_</p>
           </div>
 
+          {/* Dialog trigger for trophy */}
+          <Dialog>
+            <DialogTrigger asChild>
+              <FaTrophy className="inline-block w-8 h-8 cursor-pointer" />
+            </DialogTrigger>
+            <DialogContent>
+              <DialogModalHeader>
+                <DialogTitle>Achievements 🏆</DialogTitle>
+                <DialogDescription className="space-y-2 pt-2">
+                  <ul className="list-disc list-inside text-sm text-muted-foreground">
+                    <li>1st Place Base Hackathon by Coinbase (2025)</li>
+                    <li>Winner Solana Mini Hackathon</li>
+                    <li>Winner Devfest 2025</li>
+                    <li>Winner HackSquad 2024</li>
+                    <li>Winner 5 National-Level Hackathons</li>
+                    <li>Grant from Solana Foundation X CoinDCX</li>
+                  </ul>
+                </DialogDescription>
+              </DialogModalHeader>
+            </DialogContent>
+          </Dialog>
+
           <Button
             onClick={handleToggle}
             className="p-1 rounded bg-white dark:bg-white hover:scale-105 transition-transform cursor-pointer"
@@ -44,9 +74,19 @@ export default function ProfileCard() {
           </Button>
         </div>
       </CardHeader>
-      <div className="flex flex-col m-4 ">
+
+      <div className="flex flex-col m-4">
         <div>
           <h1>
+            SWE{" "}
+            <a
+              href="https://x.com/SuperteamIN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400"
+            >
+              @Google
+            </a>{" "}
             Building cool things on Web2, Web3, and beyond. Member{" "}
             <a
               href="https://x.com/SuperteamIN"
@@ -61,11 +101,11 @@ export default function ProfileCard() {
         <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between ">
           <div className="flex items-center gap-2">
             <a
-              href="https://drive.google.com/uc?export=download&id=1dmVV_zeU_XnA6Oev8IQDeTJihdjABtyE"
+              href="https://drive.google.com/file/d/1xChrTRVyx5Lre-lyXtVW5XIYLKfrOUi4/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="flex items-center gap-2">
+              <Button className="flex items-center gap-2 cursor-pointer">
                 <FaFileDownload className="w-4 h-4" />
                 Resume
               </Button>
@@ -75,14 +115,14 @@ export default function ProfileCard() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <Button className="flex items-center gap-2">
+              <Button className="flex items-center gap-2 cursor-pointer">
                 <FaMagic className="w-4 h-4" />
                 {`I'm Feeling Lucky`}
               </Button>
             </a>
           </div>
 
-          <div className="backdrop:blur-sm ">
+          <div className="backdrop:blur-sm">
             <Spotify
               wide
               width={300}
