@@ -99,7 +99,7 @@ export default function ProfileCard() {
         <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between ">
           <div className="flex items-center gap-2">
             <a
-              href="https://drive.google.com/file/d/1xChrTRVyx5Lre-lyXtVW5XIYLKfrOUi4/view?usp=sharing"
+              href="https://drive.google.com/file/d/1my2w0k-U59HFdzQNFq9V_F2b8RL8ItwE/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
             >
