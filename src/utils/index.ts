@@ -13,36 +13,76 @@ export const socialLinks = [
   },
 ];
 
-export const projects = [
-  {
-    title: "Bob",
-    description: "Crowdsourced Intelligence, Blockchain-Powered Rewards",
-    image: "/bob.png",
-    github: "https://github.com/YadlaMani/bob",
-    live: "https://bob-v1.vercel.app/",
-  },
-  {
-    title: "Ussop",
-    description: "Enterprise ready video conferencing web app",
-    image: "/ussop.png",
-    github: "https://github.com/YadlaMani/Ussop",
-    live: "https://ussop-nu.vercel.app",
-  },
-  {
-    title: "Sakhi",
-    description: "True independence starts with a sense safety",
-    image: "/sakhi.png",
-    github: "https://github.com/YadlaMani/sakhi",
-    live: "https://sakhi-v1.vercel.app/",
-  },
-  {
-    title: "Test.ai",
-    description: "Personalized Test & Feedback Platform",
-    image: "/test.png",
-    github: "https://github.com/YadlaMani/test.ai",
-    live: "https://test-ai-two.vercel.app/",
-  },
-];
+export const projects = {
+  web2: [
+    {
+      name: "Sakhi",
+      link: "https://github.com/YadlaMani/sakhi",
+    },
+    {
+      name: "test.ai",
+      link: "https://github.com/YadlaMani/test.ai",
+    },
+    {
+      name: "Hades",
+      link: "https://github.com/YadlaMani/hades",
+    },
+    {
+      name: "Ussop",
+      link: "https://github.com/YadlaMani/Ussop",
+    },
+    {
+      name: "CM",
+      link: "https://github.com/YadlaMani/CM",
+    },
+    {
+      name: "Chibi-Chat",
+      link: "https://github.com/YadlaMani/Chibi-chat",
+    },
+    {
+      name: "Nomand",
+      link: "https://github.com/YadlaMani/Nomad",
+    },
+  ],
+  web3: [
+    {
+      name: "Wisk",
+      link: "https://github.com/YadlaMani/wisk",
+    },
+    {
+      name: "ZK-Mixer",
+      link: "https://github.com/YadlaMani/zk-mixer",
+    },
+    {
+      name: "Nekoma",
+      link: "https://github.com/YadlaMani/Nekoma",
+    },
+    {
+      name: "Wakey-Wakey",
+      link: "https://github.com/YadlaMani/wakey-wakey",
+    },
+    {
+      name: "Bob",
+      link: "https://github.com/YadlaMani/bob",
+    },
+    {
+      name: "Avax50",
+      link: "https://github.com/YadlaMani/avax50",
+    },
+    {
+      name: "Pluto",
+      link: "https://github.com/YadlaMani/pluto",
+    },
+    {
+      name: "Gible",
+      link: "https://github.com/YadlaMani/gible",
+    },
+    {
+      name: "Stablecoin-Contract",
+      link: "https://github.com/YadlaMani/stablecoin-contract",
+    },
+  ],
+};
 export const experience = [
   {
     title: "SWE Intern",
@@ -65,10 +105,12 @@ export const ImageUrls: string[] = [
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.gHsU_WXtzslxs-c_-97RxgHaEK%3Fr%3D0%26pid%3DApi&f=1&ipt=c707337c33ee59c1b669ed7fe8f75844f5497c49621f3760336334d8b9b4e3a3&ipo=images",
 ];
 export const Achievements = [
-  "1st Place Base Hackathon by Coinbase (2025)",
-  "Winner Solana Mini Hackathon",
-  "Winner Devfest 2025",
-  "Winner HackSquad 2024",
-  "Winner 5 National-Level Hackathons",
+  "Winner of EthGlobal Hackathon – Ethereum Foundation track",
+  "Acricum grant for private information retrieval protocol",
+  "1st Place, Base Hackathon by Coinbase (2025)",
+  "Winner, Solana Mini Hackathon",
+  "Winner, DevFest 2025",
+  "Winner,  HackSquad 2024",
+  "Winner of 5 National-Level Hackathons",
   "Grant from Solana Foundation X CoinDCX",
 ];

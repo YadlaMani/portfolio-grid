@@ -4,7 +4,7 @@ import { Card, CardHeader } from "@/components/ui/card";
 import Image from "next/image";
 import { useTheme } from "next-themes";
 import { Button } from "./ui/button";
-import { Spotify } from "react-spotify-embed";
+
 import { FaFileDownload, FaMagic, FaTrophy } from "react-icons/fa";
 import {
   Dialog,
@@ -28,7 +28,7 @@ export default function ProfileCard() {
       <CardHeader>
         <div className="flex items-center gap-4">
           <Image
-            src="https://pbs.twimg.com/profile_images/1905303184111009793/MqSsO-dO_400x400.jpg"
+            src="https://pbs.twimg.com/profile_images/1955626362724929537/tyKpEKbR_400x400.jpg"
             alt="Profile"
             width={48}
             height={48}
@@ -39,18 +39,25 @@ export default function ProfileCard() {
             <p className="text-sm text-muted-foreground">@mani_yadla_</p>
           </div>
 
-          {/* Dialog trigger for trophy */}
           <Dialog>
             <DialogTrigger asChild>
-              <FaTrophy className="inline-block w-8 h-8 cursor-pointer" />
+              <FaTrophy className="inline-block w-7 h-7 text-yellow-500 hover:text-yellow-600 transition-colors cursor-pointer" />
             </DialogTrigger>
-            <DialogContent>
+
+            <DialogContent className="max-w-md bg-gradient-to-br from-white to-gray-50 dark:from-neutral-900 dark:to-neutral-800 rounded-2xl shadow-xl border border-gray-200 dark:border-neutral-700">
               <DialogModalHeader>
-                <DialogTitle>Achievements 🏆</DialogTitle>
-                <DialogDescription className="space-y-2 pt-2">
-                  <ul className="list-disc list-inside text-sm text-muted-foreground">
+                <DialogTitle className="text-xl font-semibold text-gray-800 dark:text-gray-100">
+                  Hall of Fame
+                </DialogTitle>
+                <DialogDescription className="mt-3 space-y-2 max-h-[250px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-700 pr-1">
+                  <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 space-y-1">
                     {Achievements.map((achievement, id) => (
-                      <li key={id}>{achievement}</li>
+                      <li
+                        key={id}
+                        className="transition-all duration-200 hover:text-gray-800 dark:hover:text-gray-100"
+                      >
+                        {achievement}
+                      </li>
                     ))}
                   </ul>
                 </DialogDescription>
@@ -74,18 +81,9 @@ export default function ProfileCard() {
       </CardHeader>
 
       <div className="flex flex-col m-4">
-        <div>
-          <h1>
-            SWE{" "}
-            <a
-              href="https://x.com/SuperteamIN"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400"
-            >
-              @Google
-            </a>{" "}
-            Building cool things on Web2, Web3, and beyond. Member{" "}
+        <div className="flex flex-col m-4">
+          <h1 className="text-sm text-gray-700 dark:text-gray-300">
+            Building cool things. Web2, Web3, and beyond. Member{" "}
             <a
               href="https://x.com/SuperteamIN"
               target="_blank"
@@ -94,9 +92,20 @@ export default function ProfileCard() {
             >
               @SuperteamIN
             </a>
+            . Ex-Intern{" "}
+            <a
+              href="https://x.com/SuperteamIN"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400"
+            >
+              @Google
+            </a>
+            . 9X Hackathons, 2X Grants
           </h1>
         </div>
-        <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between ">
+
+        <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between">
           <div className="flex items-center gap-2">
             <a
               href="https://drive.google.com/file/d/1my2w0k-U59HFdzQNFq9V_F2b8RL8ItwE/view?usp=sharing"
@@ -108,6 +117,7 @@ export default function ProfileCard() {
                 Resume
               </Button>
             </a>
+
             <a
               href="https://profuse-name-f33.notion.site/Mani-Yadla-proof-of-work-1a127f6bc69a8024b804e85ddbe1cf10"
               target="_blank"
@@ -118,14 +128,6 @@ export default function ProfileCard() {
                 {`I'm Feeling Lucky`}
               </Button>
             </a>
-          </div>
-
-          <div className="backdrop:blur-sm">
-            <Spotify
-              wide
-              width={300}
-              link="https://open.spotify.com/track/0fLGrGCrbziOu3dnjQMCWS?si=4472348a63dd4f83"
-            />
           </div>
         </div>
       </div>
