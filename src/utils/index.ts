@@ -114,3 +114,76 @@ export const Achievements = [
   "Winner of 5 National-Level Hackathons",
   "Grant from Solana Foundation X CoinDCX",
 ];
+
+export const allProjects = [
+  {
+    name: "Nekoma",
+    link: "https://github.com/YadlaMani/Nekoma",
+    desc: "AI agent platform on Base. Smart wallet w/ programmable flows & gasless txs.",
+  },
+  {
+    name: "Wakey-Wakey",
+    link: "https://github.com/YadlaMani/wakey-wakey",
+    desc: "Decentralized uptime monitoring network w/ real-time analytics. Superteam grant winner.",
+  },
+  {
+    name: "Wisk",
+    link: "https://github.com/YadlaMani/wisk",
+    desc: "Trustless background verification with DigiLocker + SNARK proofs secure, private & employer-ready.Ethglobal 2025 Winner",
+  },
+  {
+    name: "Bob",
+    link: "https://github.com/YadlaMani/bob",
+    desc: "Solana data labeling marketplace connecting global contributors.INNO-VA-THON 2.0 Winner",
+  },
+  {
+    name: "Yokai",
+    link: "https://github.com/YadlaMani/yokai",
+    desc: "Telegram bot designed to help users manage multiple Solana wallets efficiently",
+  },
+  {
+    name: "Gible",
+    link: "https://github.com/YadlaMani/gible",
+    desc: "Token swap DEX on Solana using Jupiter",
+  },
+  {
+    name: "Secret-Vault",
+    link: "https://github.com/YadlaMani/secret-vault-arcium",
+    desc: "Decentralized Digilocker for Personal Data build with arcium and mpc.Arcium grant recipient",
+  },
+  {
+    name: "Opto",
+    link: "https://github.com/YadlaMani/Opto",
+    desc: "A post based web3 website using next and wagmi.Onchain summer hackthon winner",
+  },
+  {
+    name: "ZK-Mixer",
+    link: "https://github.com/YadlaMani/zk-mixer",
+    desc: "Privacy protocol using zero-knowledge proofs in noir",
+  },
+  {
+    name: "Avax50",
+    link: "https://github.com/YadlaMani/avax50",
+    desc: "Token Basket Platform on Avalanche",
+  },
+  {
+    name: "Test.ai",
+    link: "https://github.com/YadlaMani/test.ai",
+    desc: "AI-powered gamified learning platform with analytics.",
+  },
+  {
+    name: "Sakhi",
+    link: "https://github.com/YadlaMani/sakhi",
+    desc: "Women safety app with SOS alerts & safe routes. Google Solution Challenge winner.",
+  },
+  {
+    name: "Hades",
+    link: "https://github.com/YadlaMani/hades",
+    desc: "Unified API for LeetCode, Codeforces & CodeChef profiles contests, stats & more",
+  },
+  {
+    name: "Ussop",
+    link: "https://github.com/YadlaMani/Ussop",
+    desc: "Enterprise-grade video conferencing app with streaming & recording features.",
+  },
+];

@@ -16,8 +16,7 @@ export default function Home() {
       <Experience />
       <Stats />
       <div className="order-first md:order-none md:col-span-6 md:row-span-2 rounded-xl border border-muted shadow-sm relative">
-
-      <ProfileCard />
+        <ProfileCard />
       </div>
       <TechStack />
       <Personal />

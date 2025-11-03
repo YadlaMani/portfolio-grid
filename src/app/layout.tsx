@@ -115,7 +115,10 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-cover bg-center bg-no-repeat`}
+        style={{
+          backgroundImage: `url('/background.png')`,
+        }}
       >
         <ThemeProvider
           attribute="class"
