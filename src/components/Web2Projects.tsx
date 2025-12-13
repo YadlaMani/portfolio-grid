@@ -20,10 +20,10 @@ const updated = [firstTile, ...allProjects];
 
 export default function Projects() {
   return (
-    <Card className="col-span-7 row-span-2 p-0 rounded-xl overflow-hidden h-full">
+    <Card className="lg:col-span-7 lg:row-span-2 p-0 rounded-xl overflow-hidden h-full min-h-[270px] lg:min-h-[200px] overflow-y-scroll">
       <TooltipProvider>
         <div
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5
+          className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 lg:grid-cols-5
       border-2 border-gray-300 dark:border-gray-700
       divide-x-2 divide-y-2 divide-gray-300 dark:divide-gray-700
       w-full h-full auto-rows-[minmax(60px,_1fr)]"
