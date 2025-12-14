@@ -85,9 +85,14 @@ export const projects = {
 };
 export const experience = [
   {
+    title: "Protocol Engineer",
+    company: "Fairblock",
+    date: "Dec 2025-Present",
+  },
+  {
     title: "SWE Intern",
     company: "Google",
-    date: "June 2025-Present",
+    date: "June 2025- Aug 2025",
   },
   {
     title: "Founding Intern",

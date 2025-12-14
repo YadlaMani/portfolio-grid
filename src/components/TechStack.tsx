@@ -9,6 +9,8 @@ const techGroups = [
       "TypeScript",
       "Rust",
       "Solidity",
+      "Go",
+      "Python",
       "ReactJS",
       "NextJS",
       "Remix",
@@ -34,6 +36,7 @@ const techGroups = [
       "Google Cloud",
       "AWS",
       "AppWrite",
+      "Supabase",
     ],
   },
   {

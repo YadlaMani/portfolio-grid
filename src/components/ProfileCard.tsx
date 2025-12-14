@@ -101,18 +101,18 @@ export default function ProfileCard() {
       <div className="flex flex-col m-4">
         <div className="flex flex-col m-4">
           <h1 className="text-sm text-gray-700 dark:text-gray-300">
-            Building cool things. Web2, Web3, and beyond. Member{" "}
+            Building cool things. Web2, Web3, and beyond. Protocol Engineer{" "}
             <a
-              href="https://x.com/SuperteamIN"
+              href="https://x.com/0xFairblock"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400"
             >
-              @SuperteamIN
+              @Fairblock
             </a>
             . Ex-Intern{" "}
             <a
-              href="https://x.com/SuperteamIN"
+              href="https://x.com/Google"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400"
