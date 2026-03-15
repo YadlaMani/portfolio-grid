@@ -28,7 +28,7 @@ export default function ProfileCard() {
       <CardHeader>
         <div className="flex items-center gap-4">
           <Image
-            src="https://pbs.twimg.com/profile_images/1982823954227036160/kzyOVeYu_400x400.jpg"
+            src="https://pbs.twimg.com/profile_images/2009865740640518144/jBg3i7mW_400x400.jpg"
             alt="Profile"
             width={48}
             height={48}
