@@ -3,57 +3,73 @@ import { Badge } from "@/components/ui/badge";
 
 const techGroups = [
   {
-    title: "Languages & Web Technologies",
+    title: "Languages & Frameworks",
     items: [
-      "JavaScript",
       "TypeScript",
+      "Go",
       "Rust",
       "Solidity",
-      "Go",
       "Python",
+      "JavaScript",
       "ReactJS",
       "NextJS",
       "Remix",
       "TailwindCSS",
-      "Socket.io",
-      "Vite",
-      "Foundry",
     ],
   },
   {
-    title: "Backend & Tools",
+    title: "Web3 & Blockchain",
+    items: [
+      "Solana",
+      "EVM",
+      "Stellar",
+      "CosmWasm",
+      "Anchor",
+      "Foundry",
+      "Wagmi",
+      "MPC/Arcium",
+      "ZK Proofs",
+    ],
+  },
+  {
+    title: "Backend & Infra",
     items: [
       "NodeJS",
       "Express.js",
-      "JWT",
-      "Git",
-      "GitHub",
       "Docker",
-      "Nginx",
       "Kubernetes",
       "Redis",
-      "GitHub Actions",
       "Google Cloud",
       "AWS",
-      "AppWrite",
-      "Supabase",
+      "Nginx",
+      "RESTful APIs",
+      "Git/GitHub",
     ],
   },
   {
-    title: "Databases & Design",
-    items: ["PostgreSQL", "MongoDB", "MySQL", "Prisma ORM", "Figma", "Canva"],
+    title: "Databases & Services",
+    items: [
+      "PostgreSQL",
+      "MongoDB",
+      "MySQL",
+      "Prisma ORM",
+      "Supabase",
+      "AppWrite",
+      "Socket.io",
+      "Vite",
+    ],
   },
 ];
 
 export default function TechStack() {
   return (
-    <Card className="md:col-span-9 md:row-span-2 h-full">
+    <Card className="h-full">
       <CardHeader>
         <CardTitle className="text-2xl font-bold">Tech Stack</CardTitle>
       </CardHeader>
-      <CardContent className="grid md:grid-cols-3 gap-6 max-h-[500px] overflow-y-auto pr-2">
+      <CardContent className="grid md:grid-cols-4 gap-6 overflow-y-auto scrollbar-notion pr-2 h-full">
         {techGroups.map((group) => (
-          <div key={group.title} className="space-y-2 border-r-2">
+          <div key={group.title} className="space-y-2 border-r-2 last:border-r-0">
             <h3 className="font-bold text-lg">{group.title}</h3>
             <div className="flex flex-wrap gap-2">
               {group.items.map((tech) => (

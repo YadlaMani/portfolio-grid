@@ -15,16 +15,63 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Achievements } from "@/utils";
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { GitCommitHorizontal } from "lucide-react";
+
+type LastPush = {
+  name: string;
+  fullName?: string;
+  url: string;
+  pushedAt: string;
+};
+
+function timeAgo(dateStr: string): string {
+  const diff = Date.now() - new Date(dateStr).getTime();
+  const mins = Math.floor(diff / 60000);
+  if (mins < 60) return `${mins}m ago`;
+  const hrs = Math.floor(mins / 60);
+  if (hrs < 24) return `${hrs}h ago`;
+  const days = Math.floor(hrs / 24);
+  return `${days}d ago`;
+}
 
 export default function ProfileCard() {
   const { theme, setTheme } = useTheme();
+  const [lastPush, setLastPush] = useState<LastPush | null>(null);
+  const [time, setTime] = useState(new Date());
+
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const formattedDate = time.toLocaleDateString("en-US", {
+    day: "2-digit",
+    month: "2-digit",
+    year: "numeric",
+  });
+
+  const formattedTime = time.toLocaleTimeString("en-US", {
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hour12: true,
+  });
+
+  useEffect(() => {
+    fetch("/api/lastpush")
+      .then((r) => r.json())
+      .then((d) => setLastPush(d.repo ?? null))
+      .catch(console.error);
+  }, []);
 
   const handleToggle = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
-    <Card className="md:col-span-6 md:row-span-2  h-full rounded-xl border border-muted shadow-sm relative">
+    <Card className="h-full w-full rounded-xl border border-muted shadow-sm relative">
       <CardHeader>
         <div className="flex items-center gap-4">
           <Image
@@ -68,7 +115,7 @@ export default function ProfileCard() {
                   Hall of Fame
                 </DialogTitle>
                 <DialogDescription className="mt-3 space-y-2 max-h-[250px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-700 pr-1">
-                  <ul className="list-disc list-inside text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                  <ul className="list-none text-sm text-gray-600 dark:text-gray-300 space-y-1">
                     {Achievements.map((achievement, id) => (
                       <li
                         key={id}
@@ -98,32 +145,30 @@ export default function ProfileCard() {
         </div>
       </CardHeader>
 
-      <div className="flex flex-col m-4">
-        <div className="flex flex-col m-4">
-          <h1 className="text-sm text-gray-700 dark:text-gray-300">
-            Building cool things. Web2, Web3, and beyond. Protocol Engineer{" "}
-            <a
-              href="https://x.com/0xFairblock"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400"
-            >
-              @Fairblock
-            </a>
-            . Ex-Intern{" "}
-            <a
-              href="https://x.com/Google"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400"
-            >
-              @Google
-            </a>
-            . 9X Hackathons, 2X Grants
-          </h1>
-        </div>
+      <div className="flex flex-col px-4 pb-4 pt-1 gap-2">
+        <h1 className="text-sm text-gray-700 dark:text-gray-300">
+          Building cool things. Web2, Web3, and beyond. Protocol Engineer{" "}
+          <a
+            href="https://x.com/0xFairblock"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400"
+          >
+            @Fairblock
+          </a>
+          . Ex-Intern{" "}
+          <a
+            href="https://x.com/Google"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-400"
+          >
+            @Google
+          </a>
+          . 10X Hackathons, 2X Grants
+        </h1>
 
-        <div className="flex flex-col md:flex-row gap-4 md:items-center justify-between">
+        <div className="flex flex-col md:flex-row gap-3 md:items-center justify-between">
           <div className="flex items-center gap-2">
             <a
               href="https://drive.google.com/file/d/1G6c9s82-CO73UAbHGYioDNcqr5m_8BWe/view?usp=sharing"
@@ -146,6 +191,55 @@ export default function ProfileCard() {
                 {`I'm Feeling Lucky`}
               </Button>
             </a>
+          </div>
+
+          {lastPush && (
+            <Link
+              href={lastPush.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-1.5 group min-w-0"
+            >
+              <GitCommitHorizontal
+                size={12}
+                className="text-muted-foreground shrink-0"
+              />
+              <div className="flex flex-col min-w-0">
+                <span className="text-[10px] uppercase tracking-widest text-muted-foreground leading-none">
+                  latest activity
+                </span>
+                <span className="text-[11px] font-mono font-medium truncate group-hover:underline leading-tight">
+                  {lastPush.fullName || lastPush.name}
+                  <span className="text-muted-foreground font-normal ml-1">
+                    · {timeAgo(lastPush.pushedAt)}
+                  </span>
+                </span>
+              </div>
+            </Link>
+          )}
+        </div>
+
+        {/* Separator */}
+        <div className="h-px bg-muted/50 my-1" />
+
+        {/* Interactive Status Footer */}
+        <div className="flex items-end justify-between pt-2">
+          <div className="flex flex-col">
+            <span className="text-[11px] italic text-muted-foreground/60 leading-tight">
+              &quot;Life imitating art&quot;
+            </span>
+          </div>
+
+          <div className="flex flex-col items-end gap-0.5">
+            <div className="flex items-center gap-1.5">
+              <div className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+              <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-tight">
+                Building stuff for now
+              </span>
+            </div>
+            <span className="text-[9px] font-mono text-muted-foreground/80 tracking-tighter">
+              {formattedDate}, {formattedTime}
+            </span>
           </div>
         </div>
       </div>

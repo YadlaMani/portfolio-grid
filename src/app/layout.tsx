@@ -4,6 +4,26 @@ import "./globals.css";
 import { Analytics } from "@vercel/analytics/next";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 
+// Fix for Node.js 22+ broken localStorage on server (Next.js Dev Overlay bug)
+if (
+  typeof global !== "undefined" &&
+  (global as any).localStorage &&
+  typeof (global as any).localStorage.getItem !== "function"
+) {
+  Object.defineProperty(global, "localStorage", {
+    value: {
+      getItem: () => null,
+      setItem: () => {},
+      removeItem: () => {},
+      clear: () => {},
+      key: () => null,
+      length: 0,
+    },
+    writable: true,
+    configurable: true,
+  });
+}
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,11 +35,11 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://mani.works"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://mani.works",
   ),
   title: "Mani Yadla",
   description:
-    "Portfolio of Mani Yadla — SWE building cool things on Web2, Web3, and beyond. Open source contributor, hackathon winner, and builder.",
+    "Portfolio of Mani Yadla - SWE building cool things on Web2, Web3, and beyond. Open source contributor, hackathon winner, and builder.",
   keywords: [
     "Mani Yadla",
     "Portfolio",
@@ -42,7 +62,7 @@ export const metadata: Metadata = {
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://mani.works",
     title: "Mani Yadla Portfolio",
     description:
-      "Portfolio of Mani Yadla — SWE building cool things on Web2, Web3, and beyond. Open source contributor, hackathon winner, and builder.",
+      "Portfolio of Mani Yadla - SWE building cool things on Web2, Web3, and beyond. Open source contributor, hackathon winner, and builder.",
     siteName: "Mani Yadla Portfolio",
     images: [
       {
@@ -60,7 +80,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mani Yadla Portfolio",
     description:
-      "Portfolio of Mani Yadla — SWE building cool things on Web2, Web3, and beyond. Open source contributor, hackathon winner, and builder.",
+      "Portfolio of Mani Yadla - SWE building cool things on Web2, Web3, and beyond. Open source contributor, hackathon winner, and builder.",
     images: ["/og-image.svg"],
     creator: "@ManiYadla",
     site: "@ManiYadla",

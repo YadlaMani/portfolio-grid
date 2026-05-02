@@ -143,3 +143,32 @@
     @apply bg-background text-foreground;
   }
 }
+@layer utilities {
+  .scrollbar-notion {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(155, 155, 155, 0.3) transparent;
+  }
+  .scrollbar-notion::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .scrollbar-notion::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-notion::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.3);
+    border-radius: 20px;
+  }
+  .scrollbar-notion:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(155, 155, 155, 0.5);
+  }
+  .dark .scrollbar-notion {
+    scrollbar-color: rgba(255, 255, 255, 0.1) transparent;
+  }
+  .dark .scrollbar-notion::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.1);
+  }
+  .dark .scrollbar-notion:hover::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+}

@@ -20,7 +20,7 @@ const updated = [firstTile, ...allProjects];
 
 export default function Projects() {
   return (
-    <Card className="lg:col-span-7 lg:row-span-2 p-0 rounded-xl overflow-hidden h-full min-h-[270px] lg:min-h-[200px] overflow-y-scroll">
+    <Card className="p-0 rounded-xl h-full overflow-hidden">
       <TooltipProvider>
         <div
           className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 lg:grid-cols-5
@@ -41,11 +41,19 @@ export default function Projects() {
                         ? `bg-black text-white dark:bg-white dark:text-black font-semibold shadow-sm`
                         : `bg-white dark:bg-neutral-900 text-black dark:text-white
                           hover:bg-gray-100 dark:hover:bg-neutral-800
-                          hover:scale-[1.03] hover:shadow-md`
+                          hover:scale-[1.03] hover:shadow-md`,
                     )}
                   >
                     {isLabel ? (
-                      item.name
+                      <Link
+                        href={item.link}
+                        className="w-full h-full flex flex-col justify-center items-center gap-0.5"
+                      >
+                        <span className="font-bold">{item.name}</span>
+                        <span className="text-[9px] opacity-60 font-normal">
+                          View all →
+                        </span>
+                      </Link>
                     ) : (
                       <Link
                         href={item.link}

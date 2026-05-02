@@ -87,17 +87,20 @@ export const experience = [
   {
     title: "Protocol Engineer",
     company: "Fairblock",
-    date: "Dec 2025-Present",
+    date: "Dec 2025–Present",
+    bullets: [
+      "Implemented cross-chain confidential transfers (Stabletrust) across EVM, Solana, and Stellar utilizing CosmWasm as the source of truth and Go-based relayers",
+      "Architected a modular Address Anonymity service and published high-performance Stellar/EVM/Solana SDKs to streamline privacy integration across ecosystems",
+    ],
   },
   {
-    title: "SWE Intern",
+    title: "SWE Intern, Distributed Cloud",
     company: "Google",
-    date: "June 2025- Aug 2025",
-  },
-  {
-    title: "Founding Intern",
-    company: "Rivekit",
-    date: "Aug 2024 - Oct 2024",
+    date: "Jun–Aug 2025",
+    bullets: [
+      "Built 8+ RESTful Go APIs for Sentinel Service, automating hardware-level BMC monitoring and control via Redfish API and GoFish",
+      "Led end-to-end integration testing and established internal API standards for distributed edge systems and cloud infrastructure",
+    ],
   },
 ];
 
@@ -110,17 +113,22 @@ export const ImageUrls: string[] = [
   "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%2Fid%2FOIP.gHsU_WXtzslxs-c_-97RxgHaEK%3Fr%3D0%26pid%3DApi&f=1&ipt=c707337c33ee59c1b669ed7fe8f75844f5497c49621f3760336334d8b9b4e3a3&ipo=images",
 ];
 export const Achievements = [
-  "Winner of EthGlobal Hackathon – Ethereum Foundation track",
-  "Acricum grant for private information retrieval protocol",
-  "1st Place, Base Hackathon by Coinbase (2025)",
-  "Winner, Solana Mini Hackathon",
-  "Winner, DevFest 2025",
-  "Winner,  HackSquad 2024",
-  "Winner of 5 National-Level Hackathons",
-  "Grant from Solana Foundation X CoinDCX",
+  "Winner of ETHGlobal Hackathon (Ethereum Foundation Track) - Built Wisk",
+  "1st Place, Base Batch 001 International Hackathon ($3,000) - Built 'Not Your Type'",
+  "Arcium (formerly Acricum) Fellowship Recipient - Developed Soteria MPC Vault",
+  "Winner, Google Solution Challenge - Developed Sakhi women's safety platform",
+  "Solana Foundation & Superteam India Grant Recipient ($1,000) - Wakey-Wakey",
+  "10X Hackathon Winner (ETHGlobal, Base, Solana Mini, DevFest, and 5+ National Hackathons)",
+  "Arcium Grant Recipient for Private Information Retrieval (PIR) Protocol Research",
+  "Winner, HackSquad 2024 & DevFest 2025",
 ];
 
 export const allProjects = [
+  {
+    name: "Wisk",
+    link: "https://github.com/YadlaMani/wisk",
+    desc: "Trustless background verification with DigiLocker + SNARK proofs. ETHGlobal Winner.",
+  },
   {
     name: "Nekoma",
     link: "https://github.com/YadlaMani/Nekoma",
@@ -129,66 +137,61 @@ export const allProjects = [
   {
     name: "Wakey-Wakey",
     link: "https://github.com/YadlaMani/wakey-wakey",
-    desc: "Decentralized uptime monitoring network w/ real-time analytics. Superteam grant winner.",
+    desc: "Decentralized uptime monitoring network. Superteam grant winner.",
   },
   {
-    name: "Wisk",
-    link: "https://github.com/YadlaMani/wisk",
-    desc: "Trustless background verification with DigiLocker + SNARK proofs secure, private & employer-ready.Ethglobal 2025 Winner",
+    name: "Soteria",
+    link: "https://github.com/YadlaMani/secret-vault-arcium",
+    desc: "Decentralized document vault using Arcium MPC and Solana Anchor. Arcium Fellowship.",
+  },
+  {
+    name: "Go-Quests",
+    link: "https://github.com/YadlaMani/lite-quests/go-quests",
+    desc: "Open-source Go exercise framework with 140+ stars; targets Go concepts via TDD.",
+  },
+  {
+    name: "Not Your Type",
+    link: "https://github.com/YadlaMani/not-your-type",
+    desc: "Decentralized prediction market on Base with smart wallet support. Base Winner.",
   },
   {
     name: "Bob",
     link: "https://github.com/YadlaMani/bob",
-    desc: "Solana data labeling marketplace connecting global contributors.INNO-VA-THON 2.0 Winner",
-  },
-  {
-    name: "Yokai",
-    link: "https://github.com/YadlaMani/yokai",
-    desc: "Telegram bot designed to help users manage multiple Solana wallets efficiently",
-  },
-  {
-    name: "Gible",
-    link: "https://github.com/YadlaMani/gible",
-    desc: "Token swap DEX on Solana using Jupiter",
-  },
-  {
-    name: "Secret-Vault",
-    link: "https://github.com/YadlaMani/secret-vault-arcium",
-    desc: "Decentralized Digilocker for Personal Data build with arcium and mpc.Arcium grant recipient",
-  },
-  {
-    name: "Opto",
-    link: "https://github.com/YadlaMani/Opto",
-    desc: "A post based web3 website using next and wagmi.Onchain summer hackthon winner",
-  },
-  {
-    name: "ZK-Mixer",
-    link: "https://github.com/YadlaMani/zk-mixer",
-    desc: "Privacy protocol using zero-knowledge proofs in noir",
-  },
-  {
-    name: "Avax50",
-    link: "https://github.com/YadlaMani/avax50",
-    desc: "Token Basket Platform on Avalanche",
-  },
-  {
-    name: "Test.ai",
-    link: "https://github.com/YadlaMani/test.ai",
-    desc: "AI-powered gamified learning platform with analytics.",
+    desc: "Solana data labeling marketplace. INNO-VA-THON 2.0 Winner.",
   },
   {
     name: "Sakhi",
     link: "https://github.com/YadlaMani/sakhi",
-    desc: "Women safety app with SOS alerts & safe routes. Google Solution Challenge winner.",
+    desc: "Women safety app with SOS alerts & AI threat detection. Google Solution Winner.",
+  },
+  {
+    name: "Opto",
+    link: "https://github.com/YadlaMani/Opto",
+    desc: "Post-based Web3 platform using Next.js and Wagmi. Onchain Summer winner.",
+  },
+  {
+    name: "test.ai",
+    link: "https://github.com/YadlaMani/test.ai",
+    desc: "AI-powered gamified learning platform with real-time performance analytics.",
+  },
+  {
+    name: "Gible",
+    link: "https://github.com/YadlaMani/gible",
+    desc: "Token swap DEX on Solana using Jupiter API; 1,000+ tokens supported.",
+  },
+  {
+    name: "Yokai",
+    link: "https://github.com/YadlaMani/yokai",
+    desc: "Telegram bot for managing multiple Solana wallets with price alerts.",
   },
   {
     name: "Hades",
     link: "https://github.com/YadlaMani/hades",
-    desc: "Unified API for LeetCode, Codeforces & CodeChef profiles contests, stats & more",
+    desc: "Unified API for LeetCode, Codeforces & CodeChef profiles, contests, and statistics.",
   },
   {
     name: "Ussop",
     link: "https://github.com/YadlaMani/Ussop",
-    desc: "Enterprise-grade video conferencing app with streaming & recording features.",
+    desc: "Enterprise-grade messaging app with UI/UX focused on high user retention.",
   },
 ];
