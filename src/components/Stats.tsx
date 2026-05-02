@@ -56,10 +56,10 @@ export default function Stats() {
 
   return (
     <Card className="h-full w-full flex flex-col overflow-y-auto scrollbar-notion">
-      <CardContent className="flex-1 flex flex-col justify-between pt-3 px-4 pb-4">
+      <CardContent className="flex-1 flex flex-col gap-3 px-4 ">
         {stats?.orgs && stats.orgs.length > 0 && (
-          <div className="flex flex-col gap-1.5">
-            <p className="text-[10px] uppercase tracking-widest text-muted-foreground">
+          <div className="flex flex-col gap-1">
+            <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
               Organizations
             </p>
             <TooltipProvider delayDuration={100}>
@@ -109,32 +109,34 @@ export default function Stats() {
           ))}
         </div>
 
-        <div className="flex flex-col gap-1.5">
-          <p className="text-[10px] uppercase tracking-widest text-muted-foreground mb-0.5">
+        <div className="flex flex-col gap-2.5">
+          <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
             Top Repos
           </p>
-          {(stats?.topRepos ?? []).map(({ name, stars, url }) => (
-            <Link
-              key={name}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 group"
-            >
-              <span className="text-[10px] font-mono text-muted-foreground group-hover:text-foreground transition-colors w-22 shrink-0 truncate">
-                {name}
-              </span>
-              <div className="flex-1 h-0.75 bg-muted rounded-full overflow-hidden">
-                <StarBar pct={Math.round((stars / maxStars) * 100)} />
-              </div>
-              <div className="flex items-center gap-0.5 shrink-0 w-10 justify-end">
-                <Star size={9} className="text-muted-foreground" />
-                <span className="text-[10px] font-mono text-muted-foreground">
-                  {stars}
+          <div className="flex flex-col gap-2">
+            {(stats?.topRepos ?? []).map(({ name, stars, url }) => (
+              <Link
+                key={name}
+                href={url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 group"
+              >
+                <span className="text-[10px] font-mono text-muted-foreground group-hover:text-foreground transition-colors w-24 shrink-0 truncate">
+                  {name}
                 </span>
-              </div>
-            </Link>
-          ))}
+                <div className="flex-1 h-1 bg-muted rounded-full overflow-hidden">
+                  <StarBar pct={Math.round((stars / maxStars) * 100)} />
+                </div>
+                <div className="flex items-center gap-0.5 shrink-0 w-10 justify-end">
+                  <Star size={9} className="text-muted-foreground" />
+                  <span className="text-[10px] font-mono text-muted-foreground">
+                    {stars}
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </CardContent>
     </Card>
