@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ImageUrls } from "@/utils";
 
 function getRandomImage(): string {
@@ -9,15 +9,25 @@ function getRandomImage(): string {
 }
 
 export default function Personal() {
-  const [imageUrl] = useState<string>(getRandomImage());
-  // mani the best
+  const [imageUrl, setImageUrl] = useState<string>("");
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setImageUrl(getRandomImage());
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return <div className="w-full h-full bg-neutral-900 rounded-lg animate-pulse" />;
+  }
+
   return (
     <div className="w-full h-full relative overflow-hidden rounded-lg">
       <Image
         src={imageUrl}
         alt="Random"
         fill
-        className="object-cover"
+        className="object-cover transition-opacity duration-500"
         priority
       />
     </div>
