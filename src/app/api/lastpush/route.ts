@@ -14,11 +14,11 @@ export async function GET() {
       "https://api.github.com/users/YadlaMani/events/public?per_page=10",
       { headers, next: { revalidate: 600 } }
     );
-    const events = await res.json();
+    const events = await res.json() as { type: string; created_at: string; repo: { name: string } }[];
     
     // Find the latest PushEvent or CreateEvent (for new repos/branches)
     const lastActivity = Array.isArray(events) ? events.find(
-      (e: any) => e.type === "PushEvent" || e.type === "CreateEvent"
+      (e: { type: string }) => e.type === "PushEvent" || e.type === "CreateEvent"
     ) : null;
 
     if (!lastActivity) {
@@ -27,7 +27,7 @@ export async function GET() {
         "https://api.github.com/users/YadlaMani/repos?sort=pushed&per_page=1",
         { headers, next: { revalidate: 1800 } }
       );
-      const repos = await repoRes.json();
+      const repos = await repoRes.json() as { name: string; html_url: string; pushed_at: string }[];
       const repo = repos?.[0];
       if (!repo) return NextResponse.json({ repo: null });
 

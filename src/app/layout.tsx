@@ -7,8 +7,8 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 // Fix for Node.js 22+ broken localStorage on server (Next.js Dev Overlay bug)
 if (
   typeof global !== "undefined" &&
-  (global as any).localStorage &&
-  typeof (global as any).localStorage.getItem !== "function"
+  (global as unknown as Record<string, unknown>).localStorage &&
+  typeof (global as unknown as { localStorage: Record<string, unknown> }).localStorage.getItem !== "function"
 ) {
   Object.defineProperty(global, "localStorage", {
     value: {
