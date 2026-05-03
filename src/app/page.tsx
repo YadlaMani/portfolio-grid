@@ -9,7 +9,7 @@ import Personal from "@/components/Personal";
 
 export default function Home() {
   return (
-    <div className="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-6 gap-4 h-screen p-4 box-border overflow-hidden">
+    <div className="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-6 gap-4 min-h-screen lg:h-screen p-4 box-border lg:overflow-hidden">
       {/* Top Left: Coding Profile */}
       <div className="lg:col-span-2 lg:row-span-2">
         <CodingProfile />
