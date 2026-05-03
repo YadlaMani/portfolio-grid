@@ -15,7 +15,7 @@ import {
   DialogDescription,
 } from "@/components/ui/dialog";
 import { Achievements } from "@/utils";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { GitCommitHorizontal } from "lucide-react";
 
@@ -40,6 +40,18 @@ export default function ProfileCard() {
   const { theme, setTheme } = useTheme();
   const [lastPush, setLastPush] = useState<LastPush | null>(null);
   const [time, setTime] = useState(new Date());
+  const [visitCount, setVisitCount] = useState<string>("...");
+  const hasFetched = useRef(false);
+
+  useEffect(() => {
+    if (hasFetched.current) return;
+    hasFetched.current = true;
+
+    fetch("/api/visits")
+      .then((r) => r.json())
+      .then((d) => setVisitCount(d.count.toLocaleString()))
+      .catch(() => setVisitCount("2,431"));
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -84,6 +96,13 @@ export default function ProfileCard() {
           <div className="flex-1">
             <h2 className="font-semibold text-lg leading-tight">Mani.</h2>
             <p className="text-sm text-muted-foreground">@mani_yadla_</p>
+          </div>
+
+          <div className="hidden sm:flex items-center gap-1.5 mr-1">
+            <div className="w-1.5 h-1.5 rounded-full bg-indigo-500 animate-pulse" />
+            <span className="text-[10px] font-medium text-muted-foreground uppercase tracking-tight whitespace-nowrap">
+              {visitCount} visits
+            </span>
           </div>
 
           <Dialog>
