@@ -14,7 +14,7 @@ import Link from "next/link";
 export default function SocialLinks() {
   return (
     <TooltipProvider>
-      <Card className="h-full grid grid-cols-5 gap-4 p-4 items-center">
+      <Card className="h-full grid grid-cols-5 gap-2 sm:gap-4 p-3 sm:p-4 items-center">
         {socialLinks.map((item) => (
           <Tooltip key={item.name}>
             <TooltipTrigger asChild>

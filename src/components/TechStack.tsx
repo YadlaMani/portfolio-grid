@@ -67,9 +67,9 @@ export default function TechStack() {
       <CardHeader>
         <CardTitle className="text-2xl font-bold">Tech Stack</CardTitle>
       </CardHeader>
-      <CardContent className="grid md:grid-cols-4 gap-6 overflow-y-auto scrollbar-notion pr-2 h-full">
+      <CardContent className="grid grid-cols-2 md:grid-cols-4 gap-6 overflow-y-auto scrollbar-notion pr-2 h-full">
         {techGroups.map((group) => (
-          <div key={group.title} className="space-y-2 border-r-2 last:border-r-0">
+          <div key={group.title} className="space-y-2 pb-4 border-b-2 last:border-b-0 md:pb-0 md:border-b-0 md:border-r-2 md:last:border-r-0">
             <h3 className="font-bold text-lg">{group.title}</h3>
             <div className="flex flex-wrap gap-2">
               {group.items.map((tech) => (

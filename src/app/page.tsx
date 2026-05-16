@@ -11,12 +11,12 @@ export default function Home() {
   return (
     <div className="flex flex-col lg:grid lg:grid-cols-12 lg:grid-rows-6 gap-4 min-h-screen lg:h-screen p-4 box-border lg:overflow-hidden">
       {/* Top Left: Coding Profile */}
-      <div className="lg:col-span-2 lg:row-span-2">
+      <div className="min-h-55 lg:min-h-0 lg:col-span-2 lg:row-span-2">
         <CodingProfile />
       </div>
 
       {/* Top Middle: Web2 Projects */}
-      <div className="lg:col-span-7 lg:row-span-2">
+      <div className="min-h-70 lg:min-h-0 lg:col-span-7 lg:row-span-2">
         <Web2Projects />
       </div>
 
@@ -31,7 +31,7 @@ export default function Home() {
       </div>
 
       {/* Middle Left: Stats/GitHub */}
-      <div className="lg:col-span-3 lg:row-span-2">
+      <div className="min-h-55 lg:min-h-0 lg:col-span-3 lg:row-span-2">
         <Stats />
       </div>
 
@@ -46,7 +46,7 @@ export default function Home() {
       </div>
 
       {/* Bottom Right: Personal/Image */}
-      <div className="lg:col-span-3 lg:row-span-2">
+      <div className="h-65 lg:h-auto lg:col-span-3 lg:row-span-2">
         <Personal />
       </div>
     </div>

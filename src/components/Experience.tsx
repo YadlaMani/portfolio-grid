@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 
 export default function Experience() {
   return (
-    <Card className="flex flex-col gap-3 p-4 lg:overflow-y-auto scrollbar-notion h-full w-full">
+    <Card className="flex flex-col gap-3 p-4 overflow-y-auto scrollbar-notion h-full w-full">
       <p className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">
         Experience
       </p>
