@@ -35,35 +35,42 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://mani.works",
+    process.env.NEXT_PUBLIC_SITE_URL || "https://manii.space",
   ),
-  title: "Mani Yadla",
+  title: "Mani Yadla — Software Engineer, Web2 & Web3 Developer",
   description:
-    "Portfolio of Mani Yadla - SWE building cool things on Web2, Web3, and beyond. Open source contributor, hackathon winner, and builder.",
+    "Mani Yadla — Software Engineer building full-stack products, blockchain applications, and developer tools. Protocol Engineer at Fairblock, Ex-Google Intern, 10X Hackathon winner.",
   keywords: [
     "Mani Yadla",
+    "Software Engineer",
     "Portfolio",
-    "SWE",
     "Web3",
     "Web2",
-    "Hackathons",
-    "Open Source",
+    "Full Stack Developer",
+    "Blockchain",
     "Ethereum",
     "Solana",
+    "Fairblock",
+    "Google",
+    "Hackathons",
+    "Open Source",
   ],
   authors: [{ name: "Mani Yadla", url: "https://twitter.com/ManiYadla" }],
   creator: "Mani Yadla",
   publisher: "Mani Yadla",
+  alternates: {
+    canonical: "/",
+  },
 
   // Open Graph
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: process.env.NEXT_PUBLIC_SITE_URL || "https://mani.works",
-    title: "Mani Yadla Portfolio",
+    url: process.env.NEXT_PUBLIC_SITE_URL || "https://manii.space",
+    title: "Mani Yadla — Software Engineer, Web2 & Web3 Developer",
     description:
-      "Portfolio of Mani Yadla - SWE building cool things on Web2, Web3, and beyond. Open source contributor, hackathon winner, and builder.",
-    siteName: "Mani Yadla Portfolio",
+      "Mani Yadla — Software Engineer building full-stack products, blockchain applications, and developer tools. Protocol Engineer at Fairblock, Ex-Google Intern, 10X Hackathon winner.",
+    siteName: "Mani Yadla",
     images: [
       {
         url: "/og-image.svg",
@@ -78,9 +85,9 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "Mani Yadla Portfolio",
+    title: "Mani Yadla — Software Engineer, Web2 & Web3 Developer",
     description:
-      "Portfolio of Mani Yadla - SWE building cool things on Web2, Web3, and beyond. Open source contributor, hackathon winner, and builder.",
+      "Mani Yadla — Software Engineer building full-stack products, blockchain applications, and developer tools. Protocol Engineer at Fairblock, Ex-Google Intern, 10X Hackathon winner.",
     images: ["/og-image.svg"],
     creator: "@ManiYadla",
     site: "@ManiYadla",
@@ -132,6 +139,26 @@ export default function RootLayout({
           rel="preconnect"
           href="https://fonts.gstatic.com"
           crossOrigin="anonymous"
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Mani Yadla",
+              url: "https://manii.space",
+              sameAs: [
+                "https://github.com/YadlaMani",
+                "https://twitter.com/ManiYadla",
+                "https://linkedin.com/in/mani-yadla",
+                "https://x.com/mani_yadla_",
+              ],
+              jobTitle: "Software Engineer",
+              description:
+                "Software Engineer building full-stack products, blockchain applications, and developer tools. Protocol Engineer at Fairblock, Ex-Google Intern.",
+            }),
+          }}
         />
       </head>
       <body

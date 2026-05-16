@@ -94,7 +94,7 @@ export default function ProfileCard() {
             className="rounded-full object-cover"
           />
           <div className="flex-1">
-            <h2 className="font-semibold text-lg leading-tight">Mani.</h2>
+            <h2 className="font-semibold text-lg leading-tight">Mani Yadla</h2>
             <p className="text-sm text-muted-foreground">@mani_yadla_</p>
           </div>
 
