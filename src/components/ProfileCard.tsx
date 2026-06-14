@@ -137,7 +137,7 @@ export default function ProfileCard() {
       <div className="flex flex-col px-4 pb-4 pt-1 gap-2">
         <h1 className="text-sm text-gray-700 dark:text-gray-300">
           I do a bit of everything protocols, full-stack, and the occasional fun
-          weekend hack. Did confidential transfers{" "}
+          weekend hack. Worked on confidential transfers{" "}
           <a
             href="https://x.com/0xFairblock"
             target="_blank"
