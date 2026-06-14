@@ -80,7 +80,7 @@ export default function ProfileCard() {
       <CardHeader>
         <div className="flex items-center gap-4">
           <Image
-            src="https://pbs.twimg.com/profile_images/2009865740640518144/jBg3i7mW_400x400.jpg"
+            src="/dp.jpg"
             alt="Profile"
             width={48}
             height={48}
@@ -112,13 +112,18 @@ export default function ProfileCard() {
                   Hall of Fame
                 </DialogTitle>
                 <DialogDescription className="mt-3 space-y-2 max-h-[250px] overflow-y-auto scrollbar-thin scrollbar-thumb-gray-400 dark:scrollbar-thumb-gray-700 pr-1">
-                  <ul className="list-none text-sm text-gray-600 dark:text-gray-300 space-y-1">
+                  <ul className="list-none text-sm text-gray-600 dark:text-gray-300 space-y-2.5">
                     {Achievements.map((achievement, id) => (
                       <li
                         key={id}
-                        className="transition-all duration-200 hover:text-gray-800 dark:hover:text-gray-100"
+                        className="flex flex-col leading-snug border-l-2 border-red-400/60 pl-2.5"
                       >
-                        {achievement}
+                        <span className="font-semibold text-gray-800 dark:text-gray-100">
+                          {achievement.award}
+                        </span>
+                        <span className="text-xs text-gray-500 dark:text-gray-400">
+                          {achievement.detail}
+                        </span>
                       </li>
                     ))}
                   </ul>
@@ -126,13 +131,13 @@ export default function ProfileCard() {
               </DialogModalHeader>
             </DialogContent>
           </Dialog>
-
         </div>
       </CardHeader>
 
       <div className="flex flex-col px-4 pb-4 pt-1 gap-2">
         <h1 className="text-sm text-gray-700 dark:text-gray-300">
-          Building cool things. Web2, Web3, and beyond. Protocol Engineer{" "}
+          I do a bit of everything protocols, full-stack, and the occasional fun
+          weekend hack. Did confidential transfers{" "}
           <a
             href="https://x.com/0xFairblock"
             target="_blank"
@@ -141,7 +146,7 @@ export default function ProfileCard() {
           >
             @Fairblock
           </a>
-          . Ex-Intern{" "}
+          , Go + infra{" "}
           <a
             href="https://x.com/Google"
             target="_blank"
@@ -150,7 +155,7 @@ export default function ProfileCard() {
           >
             @Google
           </a>
-          . 10X Hackathons, 2X Grants
+          . 10X hackathon wins, 2 grants.
         </h1>
 
         <div className="flex flex-col md:flex-row gap-3 md:items-center justify-between">

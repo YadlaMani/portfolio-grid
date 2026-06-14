@@ -20,8 +20,11 @@ export default function Experience() {
         >
           <div className="flex items-start justify-between gap-2">
             <div>
-              <h3 className="text-sm font-bold leading-tight">
+              <h3 className="text-sm font-bold leading-tight flex items-center gap-1.5">
                 {item.company}
+                {item.current && (
+                  <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                )}
               </h3>
               <p className="text-[11px] text-muted-foreground mt-0.5">
                 {item.title}
@@ -38,7 +41,7 @@ export default function Experience() {
                 className="text-[10px] text-gray-500 dark:text-gray-400 flex gap-1.5 leading-relaxed"
               >
                 <span className="text-gray-400 dark:text-gray-600 shrink-0 mt-0.5">
-                  —
+                  -
                 </span>
                 <span>{bullet}</span>
               </li>

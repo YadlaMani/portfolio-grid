@@ -8,7 +8,8 @@ import { ThemeProvider } from "@/components/ui/theme-provider";
 if (
   typeof global !== "undefined" &&
   (global as unknown as Record<string, unknown>).localStorage &&
-  typeof (global as unknown as { localStorage: Record<string, unknown> }).localStorage.getItem !== "function"
+  typeof (global as unknown as { localStorage: Record<string, unknown> })
+    .localStorage.getItem !== "function"
 ) {
   Object.defineProperty(global, "localStorage", {
     value: {
@@ -37,9 +38,9 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://manii.space",
   ),
-  title: "Mani Yadla — Software Engineer, Web2 & Web3 Developer",
+  title: "Mani Yadla - Protocol Engineer, Full-Stack & Web3 Developer",
   description:
-    "Mani Yadla — Software Engineer building full-stack products, blockchain applications, and developer tools. Protocol Engineer at Fairblock, Ex-Google Intern, 10X Hackathon winner.",
+    "Full-stack & Web3 developer. Built confidential transfer infra across EVM, Solana, and Stellar at Fairblock, ex-Google intern, 10X hackathon winner.",
   keywords: [
     "Mani Yadla",
     "Software Engineer",
@@ -67,28 +68,28 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: process.env.NEXT_PUBLIC_SITE_URL || "https://manii.space",
-    title: "Mani Yadla — Software Engineer, Web2 & Web3 Developer",
+    title: "Mani Yadla - Protocol Engineer, Full-Stack & Web3 Developer",
     description:
-      "Mani Yadla — Software Engineer building full-stack products, blockchain applications, and developer tools. Protocol Engineer at Fairblock, Ex-Google Intern, 10X Hackathon winner.",
+      "Full-stack & Web3 developer. Built confidential transfer infra across EVM, Solana, and Stellar at Fairblock, ex-Google intern, 10X hackathon winner.",
     siteName: "Mani Yadla",
     images: [
       {
-        url: "/og-image.svg",
-        width: 1200,
-        height: 630,
-        alt: "Mani Yadla Portfolio",
-        type: "image/svg+xml",
+        url: "/dp.jpg",
+        width: 400,
+        height: 400,
+        alt: "Mani Yadla",
+        type: "image/jpeg",
       },
     ],
   },
 
   // Twitter
   twitter: {
-    card: "summary_large_image",
-    title: "Mani Yadla — Software Engineer, Web2 & Web3 Developer",
+    card: "summary",
+    title: "Mani Yadla - Protocol Engineer, Full-Stack & Web3 Developer",
     description:
-      "Mani Yadla — Software Engineer building full-stack products, blockchain applications, and developer tools. Protocol Engineer at Fairblock, Ex-Google Intern, 10X Hackathon winner.",
-    images: ["/og-image.svg"],
+      "Full-stack & Web3 developer. Built confidential transfer infra across EVM, Solana, and Stellar at Fairblock, ex-Google intern, 10X hackathon winner.",
+    images: ["/dp.jpg"],
     creator: "@ManiYadla",
     site: "@ManiYadla",
   },
@@ -128,10 +129,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#0052FF" />
         <meta name="color-scheme" content="light dark" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />

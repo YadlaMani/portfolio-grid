@@ -87,19 +87,21 @@ export const experience = [
   {
     title: "Protocol Engineer",
     company: "Fairblock",
-    date: "Dec 2025–Present",
+    date: "Dec 2025–Jun 2026",
+    current: false,
     bullets: [
-      "Implemented cross-chain confidential transfers (Stabletrust) across EVM, Solana, and Stellar utilizing CosmWasm as the source of truth and Go-based relayers",
-      "Architected a modular Address Anonymity service and published high-performance Stellar/EVM/Solana SDKs to streamline privacy integration across ecosystems",
+      "Shipped StableTrust cross-chain confidential transfers across EVM, Solana, and Stellar, with CosmWasm as the source of truth and Go relayers settling encrypted state.",
+      "Built a modular address-anonymity service and shipped EVM, Solana, and Stellar SDKs so partners add privacy without touching the cryptography underneath.",
     ],
   },
   {
     title: "SWE Intern, Distributed Cloud",
     company: "Google",
     date: "Jun–Aug 2025",
+    current: false,
     bullets: [
-      "Built 8+ RESTful Go APIs for Sentinel Service, automating hardware-level BMC monitoring and control via Redfish API and GoFish",
-      "Led end-to-end integration testing and established internal API standards for distributed edge systems and cloud infrastructure",
+      "Designed and shipped 8+ Go REST APIs for Sentinel Service, automating hardware-level BMC monitoring and control over Redfish via GoFish.",
+      "Owned end-to-end integration testing across multi-vendor edge hardware and defined the internal API standards for the service.",
     ],
   },
 ];
@@ -113,14 +115,39 @@ export const ImageUrls: string[] = [
   "/personal/whiplash.avif",
 ];
 export const Achievements = [
-  "Winner of ETHGlobal Hackathon (Ethereum Foundation Track) - Built Wisk",
-  "1st Place, Base Batch 001 International Hackathon ($3,000) - Built 'Not Your Type'",
-  "Arcium (formerly Acricum) Fellowship Recipient - Developed Soteria MPC Vault",
-  "Winner, Google Solution Challenge - Developed Sakhi women's safety platform",
-  "Solana Foundation & Superteam India Grant Recipient ($1,000) - Wakey-Wakey",
-  "10X Hackathon Winner (ETHGlobal, Base, Solana Mini, DevFest, and 5+ National Hackathons)",
-  "Arcium Grant Recipient for Private Information Retrieval (PIR) Protocol Research",
-  "Winner, HackSquad 2024 & DevFest 2025",
+  {
+    award: "ETHGlobal Winner",
+    detail:
+      "Ethereum Foundation track - built Wisk, trustless background verification with DigiLocker + SNARK proofs.",
+  },
+  {
+    award: "Base Batch 001 - 1st Place (1 ETH / $3,000)",
+    detail: "Built Not Your Type, an on-chain prediction market on Base.",
+  },
+  {
+    award: "Arcium Fellowship",
+    detail:
+      "Built Soteria, an MPC document vault on Solana with zero-knowledge access control.",
+  },
+  {
+    award: "Google Solution Challenge Winner",
+    detail:
+      "Built Sakhi, a women's-safety platform with live SOS and safe-route alerts.",
+  },
+  {
+    award: "Solana × CoinDCX Grant ($1,000)",
+    detail:
+      "Built Wakey-Wakey, a decentralized uptime network across 50+ validator nodes.",
+  },
+  {
+    award: "Arcium Grant",
+    detail: "Private Information Retrieval (PIR) protocol research.",
+  },
+  {
+    award: "10X Hackathon Winner",
+    detail:
+      "ETHGlobal, Base, Solana Mini, DevFest 2025, HackSquad 2024, and 5 national hackathons.",
+  },
 ];
 
 export const allProjects = [
